@@ -1,23 +1,43 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
+const totals=[100,200,300]
 
 function App() {
+  const [counter,setCounter]=useState(()=>{
+    const sum=totals.reduce((total,element)=>total+element,3);
+    return sum;
+  });
+
+  const [info,setInfo]=useState({
+    name:'Nguyen Van A',
+    age: 18,
+    address: 'Ha Noi'
+  })
+
+  function HandleClick(){
+      setCounter(counter=>counter+1);
+      setCounter(counter=>counter+1);
+      setCounter(counter=>counter+1);
+
+  }
+  function HandleClick1()
+  { 
+    setInfo({
+      ...info,
+      address:'Ho Chi Minh'
+    })
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h1>{counter}</h1>
+        <button onClick={HandleClick}>Increase</button>
+
+        <h2>{JSON.stringify(info)}</h2>
+        <button onClick={HandleClick1}>Increase</button>
+
+        
+
     </div>
   );
 }
