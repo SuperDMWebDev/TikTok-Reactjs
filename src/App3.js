@@ -3,7 +3,7 @@ import './App.css';
 
 
 // submit 2 the input va 2 the input thay doi dua tren du lieu nhap vao
-function App2() {
+function App3() {
   const courses=[{
       id:1,
       name:'Html,css'
@@ -17,19 +17,33 @@ function App2() {
         name:'Reactjs'
     }]
 
-    const [checked,setChecked]=useState(2);
-    console.log(checked);
+    const [checked,setChecked]=useState([]);
     function HandleClick()
     {
         console.log({id: checked});
+    }
+    function HandleCheck(id)
+    {
+        setChecked(prev=>{
+
+            const isChecked=checked.includes(id);
+            if(isChecked)
+            {
+                return checked.filter(element=>element!==id)
+            }
+            
+            else{
+                return [...prev,id]
+            }
+        })
     }
   return (
     <div className="App">
         {
             courses.map(course=>(
                 <div key={course.id}>
-                    <input type="radio" checked={course.id === checked}
-                    onChange={()=>setChecked(course.id)}/>
+                    <input type="checkbox" checked={checked.includes(course.id)}
+                    onChange={()=>HandleCheck(course.id)}/>
                 {course.name}
                 </div>
             ))
@@ -42,4 +56,4 @@ function App2() {
   );
 }
 
-export default App2;
+export default App3;
