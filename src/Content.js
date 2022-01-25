@@ -1,7 +1,18 @@
+import {useEffect} from 'react';
+import { useState } from 'react/cjs/react.development';
 
 function Content()
 {
-    return <h1>Hi anh em F8</h1>
+    const [title,setTitle]=useState('');
+    useEffect((title)=>{
+        document.title=title;
+    })
+    return (
+    
+        <>
+            <input  value={title} onChange={(e)=>setTitle(e.target.value)}/>
+        </>
+    )
 
 }
 export default Content
