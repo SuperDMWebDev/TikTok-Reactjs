@@ -1,4 +1,5 @@
 import {useEffect} from 'react';
+import { findRenderedDOMComponentWithTag } from 'react-dom/cjs/react-dom-test-utils.production.min';
 import { useState } from 'react/cjs/react.development';
 // cach dung useEffec(,[deps]) tu render lai moi khi deps thay doi 
 function App7()
@@ -7,6 +8,7 @@ function App7()
     const [title,setTitle]=useState('');
     const [post,setPost]=useState([]);
     const [type1,setType1]=useState('posts');
+    const [showTop,setShowTop]=useState(false);
     console.log(type1);
     // useEffect se chay 2 lan ( lan 1 la sau khi mounted , lan 2 la sau khi sua type1)
     useEffect(()=>{
@@ -14,7 +16,28 @@ function App7()
         .then(res=>res.json())
         .then(posts=>setPost(posts));
     },[type1])
-    
+    useEffect(()=>{
+        const handleScroll=()=>
+        {
+            if(window.scrollY>200)
+            {
+                setShowTop(true);
+            }
+            else
+            {
+                setShowTop(false);
+            }
+
+        }   
+        window.addEventListener('scroll', handleScroll);
+
+
+        // clean up function dung de remove listener khi trang nay bi remove 
+        return ()=>{
+            window.removeEventListener('scroll',handleScroll);}
+    },[])
+
+
     return (
     
         <>
@@ -30,6 +53,19 @@ function App7()
                    post.map((element)=><li key={element.id}>{element.title || element.name}</li>)
                }
             </ul>
+
+            {
+                showTop &&
+                    <button style={{
+                            position:'fixed',
+                            right:20,
+                            bottom:20
+                    }}>
+                        GO TO TOP
+                    </button>
+                }
+
+            }
         </>
     )
 
