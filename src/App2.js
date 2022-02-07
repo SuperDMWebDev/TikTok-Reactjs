@@ -1,8 +1,7 @@
 import {useState} from 'react';
 import './App.css';
 
-
-// submit 2 the input va 2 the input thay doi dua tren du lieu nhap vao
+/// cach de tao thay doi radio chi duoc chon 1 gia tri , submit in ra gia tri duoc chon
 function App2() {
   const courses=[{
       id:1,
@@ -21,7 +20,8 @@ function App2() {
     console.log(checked);
     function HandleClick()
     {
-        console.log({id: checked});
+      //  vi du in ra id : 2, id : 1 
+        console.log({"id": checked});
     }
   return (
     <div className="App">

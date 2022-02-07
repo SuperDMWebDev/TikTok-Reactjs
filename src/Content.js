@@ -1,16 +1,19 @@
 import {useEffect} from 'react';
 import { useState } from 'react/cjs/react.development';
-
+import App12 from './App12';
 function Content()
 {
-    const [title,setTitle]=useState('');
-    useEffect((title)=>{
-        document.title=title;
-    })
+    const [title,setTitle]=useState(true);
+    let changeTitle=()=>{
+        setTitle(!title);
+        
+    }
+    
     return (
     
         <>
-            <input  value={title} onChange={(e)=>setTitle(e.target.value)}/>
+        <button onClick={changeTitle}>Toggle</button>
+        {title && <App12/>}
         </>
     )
 

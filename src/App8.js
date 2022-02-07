@@ -1,6 +1,6 @@
 import {useEffect, useReducer} from 'react';
 import { useState } from 'react/cjs/react.development';
-// resize lai man hinh 
+// resize lai man hinh, du lieu thay doi lien tuc nen phai dung useEffect
 function App8()
 {
     // set width = chieu ngang hien tai
@@ -14,7 +14,7 @@ function App8()
         return (()=>{
             window.removeEventListener('resize',handleResize);
         })
-    })
+    },[])
     return(
         <>
             <h1>{width}</h1>

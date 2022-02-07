@@ -2,19 +2,21 @@ import {useState} from 'react';
 import './App.css';
 
 
-// submit 2 the input va 2 the input thay doi dua tren du lieu nhap vao
+// su dung localsotrage de hien thi ra du lieu
 function App4() {
    
   const [job,setJob]=useState('');
   // ?? neu la null hoac undefined
   const [jobs,setJobs]=useState(()=>{
     const jsonStorageJobs=localStorage.getItem('jobs');
+  
     const storageJobs=JSON.parse(jsonStorageJobs);
+    console.log(jsonStorageJobs);
+    console.log(storageJobs);
     return storageJobs ??[]}
       );
-  console.log(job);
   function HandleClick()
-  {
+  { 
         setJobs((prev)=>{
             const newJob = [...prev,job];
             const jsonJob= JSON.stringify(newJob);

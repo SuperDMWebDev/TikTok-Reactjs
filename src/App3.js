@@ -2,7 +2,7 @@ import {useState} from 'react';
 import './App.css';
 
 
-// submit 2 the input va 2 the input thay doi dua tren du lieu nhap vao
+// tao checkbox ( dung include de chon nhieu checkbox va ky thuat xu li khi xoa bo checkbox)
 function App3() {
   const courses=[{
       id:1,
@@ -25,8 +25,8 @@ function App3() {
     function HandleCheck(id)
     {
         setChecked(prev=>{
-
-            const isChecked=checked.includes(id);
+           // o day co the dung mang check hoac prev deu duoc 
+            const isChecked=prev.includes(id);
             if(isChecked)
             {
                 return checked.filter(element=>element!==id)

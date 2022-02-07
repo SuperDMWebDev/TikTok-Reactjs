@@ -2,6 +2,7 @@ import {useEffect} from 'react';
 import { findRenderedDOMComponentWithTag } from 'react-dom/cjs/react-dom-test-utils.production.min';
 import { useState } from 'react/cjs/react.development';
 // cach dung useEffec(,[deps]) tu render lai moi khi deps thay doi 
+// hien thi button khi scroll xuong duoi > 200
 function App7()
 {
     const tabs=['posts','comments','albums']

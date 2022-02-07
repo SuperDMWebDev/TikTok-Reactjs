@@ -9,9 +9,10 @@ function App9()
 
     // su dung useEffect tao 1 lan khong doi so , chay countdown=countdown-1
     useEffect(()=>{
-        setInterval(()=>{
+        const timerId=setInterval(()=>{
             setCountDown(element=>element-1);
         },2000)
+        return ()=>{clearInterval(timerId)}
     },[])
     return(
         <>

@@ -5,6 +5,7 @@ function App6()
 {
     const [title,setTitle]=useState('');
     const [post,setPost]=useState([]);
+    // lay du lieu tu file json 
     useEffect(()=>{
         fetch('https://jsonplaceholder.typicode.com/posts')
         .then(res=>res.json())

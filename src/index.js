@@ -11,11 +11,29 @@ import App6 from './App6';
 import App7 from './App7';
 import App8 from './App8';
 import App9 from './App9';
+import Content from './Content';
 import reportWebVitals from './reportWebVitals';
+// fake comment dung chung voi app12
+// moi 2s phat ra 1 event 
+function emitComment(id){
+  setInterval(()=>{
+    // tu dong phat 1 event
+    //custom event : doi so thu nhat event name, doi so thu 2 object event (key-value)
+    window.dispatchEvent(
+      new CustomEvent(`lesson-${id}`,
+      {
+        detail: `noi dung comment cua lesson${id}`
+      })
+    )
+  },2000)
+}
+emitComment(1);
+emitComment(2);
+emitComment(3);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App9 />
+    <Content />
   </React.StrictMode>,
   document.getElementById('root')
 );
