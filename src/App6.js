@@ -1,5 +1,6 @@
 import {useEffect} from 'react';
 import { useState } from 'react/cjs/react.development';
+import React from 'react';
 // cach dung useEffec(,[]) de call api 1 lan du co re-render di nua
 function App6()
 {

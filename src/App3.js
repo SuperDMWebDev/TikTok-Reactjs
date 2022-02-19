@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import './App.css';
+import React from 'react';
 
 
 // tao checkbox ( dung include de chon nhieu checkbox va ky thuat xu li khi xoa bo checkbox)

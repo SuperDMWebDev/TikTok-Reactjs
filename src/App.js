@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import {useState} from 'react';
+import {React, useState} from 'react';
 const totals=[100,200,300]
 
 function App() {

@@ -1,5 +1,6 @@
 import {useEffect, useReducer} from 'react';
 import { useState } from 'react/cjs/react.development';
+import React from 'react';
 // resize lai man hinh, du lieu thay doi lien tuc nen phai dung useEffect
 function App8()
 {

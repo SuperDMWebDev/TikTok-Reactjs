@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import './App.css';
+import React from 'react';
 
 /// cach de tao thay doi radio chi duoc chon 1 gia tri , submit in ra gia tri duoc chon
 function App2() {

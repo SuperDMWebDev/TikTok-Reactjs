@@ -1,6 +1,8 @@
 import {useEffect} from 'react';
 import { useState } from 'react/cjs/react.development';
 import App12 from './App12';
+import App13 from './App13';
+import React from 'react';
 function Content()
 {
     const [title,setTitle]=useState(true);
@@ -13,7 +15,7 @@ function Content()
     
         <>
         <button onClick={changeTitle}>Toggle</button>
-        {title && <App12/>}
+        {title && <App13/>}
         </>
     )
 

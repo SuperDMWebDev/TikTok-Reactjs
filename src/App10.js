@@ -1,5 +1,6 @@
 import {useEffect, useReducer} from 'react';
 import { useState } from 'react/cjs/react.development';
+import React from 'react';
 //return duoc goi truoc khi re render khi count thay doi ( dung voi file content.js)
 function App10()
 {

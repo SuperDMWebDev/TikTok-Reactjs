@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import './App.css';
-
+import React from 'react';
 
 // su dung localsotrage de hien thi ra du lieu
 function App4() {

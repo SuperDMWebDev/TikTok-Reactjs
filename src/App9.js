@@ -1,5 +1,6 @@
 import {useEffect, useReducer} from 'react';
 import { useState } from 'react/cjs/react.development';
+import React from 'react';
 // tao ung dung chay nguoc 
 function App9()
 {
